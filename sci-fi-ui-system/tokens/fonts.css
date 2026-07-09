@@ -1,0 +1,13 @@
+/* ============================================================
+   FONTS — Sci-Fi UI Design System
+   ------------------------------------------------------------
+   This system in "Neue Haas Grotesk Display" (Linotype,
+   proprietary). It is substituted here with the closest free
+   Google Fonts grotesques:
+     - Archivo        -> display / headers (heavy uppercase tracking)
+     - Hanken Grotesk -> body, UI copy, lore italics
+   FLAG: swap these @font-face/import lines for the licensed
+   Neue Haas Grotesk Display + Text webfonts when available.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');

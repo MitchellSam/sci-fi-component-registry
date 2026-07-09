@@ -1,0 +1,317 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "scifi",
+  "homepage": "https://github.com/mitchellsam/sci-fi-registry",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Sci-Fi Theme",
+      "description": "Dark, angular, sci-fi theme with slate substrate, gold accents, cyan focus states. Maps onto shadcn's semantic variables (dark mode = canonical look, light mode = pale wash) and adds a full token layer: raw neutrals, primary/secondary/accent colors, categorical & rarity palettes, glows, scrims, tracking, and motion.",
+      "cssVars": {
+        "theme": {
+          "color-gold": "var(--gold)",
+          "color-gold-bright": "var(--gold-bright)",
+          "color-gold-deep": "var(--gold-deep)",
+          "color-cyan": "var(--cyan)",
+          "color-cyan-bright": "var(--cyan-bright)",
+          "color-cyan-deep": "var(--cyan-deep)",
+          "color-crimson": "var(--crimson)",
+          "color-crimson-bright": "var(--crimson-bright)",
+          "color-arc": "var(--arc)",
+          "color-solar": "var(--solar)",
+          "color-void": "var(--void)",
+          "color-stasis": "var(--stasis)",
+          "color-strand": "var(--strand)",
+          "color-rarity-common": "var(--rarity-common)",
+          "color-rarity-uncommon": "var(--rarity-uncommon)",
+          "color-rarity-rare": "var(--rarity-rare)",
+          "color-rarity-legendary": "var(--rarity-legendary)",
+          "color-rarity-exotic": "var(--rarity-exotic)"
+        },
+        "light": {
+          "background": "#eef1f5",
+          "foreground": "#1c2430",
+          "card": "#ffffff",
+          "card-foreground": "#1c2430",
+          "popover": "#ffffff",
+          "popover-foreground": "#1c2430",
+          "primary": "#c9a23a",
+          "primary-foreground": "#05070b",
+          "secondary": "#e7ecf2",
+          "secondary-foreground": "#0a0e15",
+          "muted": "#e7ecf2",
+          "muted-foreground": "#515c6b",
+          "accent": "#e2e7ee",
+          "accent-foreground": "#0a0e15",
+          "destructive": "#c1352b",
+          "destructive-foreground": "#ffffff",
+          "border": "#d3d9e1",
+          "input": "#c4ccd6",
+          "ring": "#1d6b82",
+          "chart-1": "#4fb6d8",
+          "chart-2": "#e8743b",
+          "chart-3": "#8b5ba6",
+          "chart-4": "#4d77c4",
+          "chart-5": "#4fa86b",
+          "radius": "0rem",
+          "sidebar": "#e7ecf2",
+          "sidebar-foreground": "#1c2430",
+          "sidebar-primary": "#8a6f25",
+          "sidebar-primary-foreground": "#f6f8fb",
+          "sidebar-accent": "#dde3ec",
+          "sidebar-accent-foreground": "#0a0e15",
+          "sidebar-border": "#d3d9e1",
+          "sidebar-ring": "#1d6b82",
+
+          "slate-1000": "#05070b",
+          "slate-900": "#0a0e15",
+          "slate-800": "#11161f",
+          "slate-700": "#1a212d",
+          "slate-600": "#28313f",
+          "slate-500": "#3b4654",
+          "slate-400": "#5b6675",
+          "slate-300": "#8b95a3",
+          "slate-200": "#c2c9d2",
+          "slate-100": "#e8ecf1",
+          "gold-bright": "#f0c850",
+          "gold": "#c9a23a",
+          "gold-deep": "#8a6f25",
+          "cyan-bright": "#5fd0e6",
+          "cyan": "#38a9c4",
+          "cyan-deep": "#1d6b82",
+          "crimson-bright": "#e2483b",
+          "crimson": "#c1352b",
+          "crimson-deep": "#7d1f19",
+          "success": "#4f8a3d",
+          "warning": "#e8a13b",
+          "arc": "#4fb6d8",
+          "solar": "#e8743b",
+          "void": "#8b5ba6",
+          "stasis": "#4d77c4",
+          "strand": "#4fa86b",
+          "team-alpha": "#3d8ec4",
+          "team-bravo": "#d23b2f",
+          "rarity-common": "#c5c8cc",
+          "rarity-uncommon": "#4f8a3d",
+          "rarity-rare": "#5278a3",
+          "rarity-legendary": "#61417a",
+          "rarity-exotic": "#ceae33",
+
+          "font-display": "'Archivo', 'Neue Haas Grotesk Display', system-ui, sans-serif",
+          "font-text": "'Hanken Grotesk', 'Neue Haas Grotesk Text', system-ui, sans-serif",
+          "track-mega": "0.22em",
+          "track-wide": "0.14em",
+          "track-label": "0.08em",
+          "track-tight": "0.01em",
+          "ease-out-accent": "cubic-bezier(0.16, 1, 0.3, 1)",
+          "ease-sharp": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "dur-fast": "120ms",
+          "dur-base": "200ms",
+          "dur-slow": "360ms",
+
+          "accent-text": "#8a6f25",
+          "text-on-accent": "#05070b",
+          "border-hairline": "#d3d9e1",
+          "border-strong": "#aab3bf",
+          "surface-input": "#ffffff",
+          "overlay-scrim": "rgba(16, 22, 31, 0.45)",
+          "glow-focus": "0 0 0 1px #1d6b82, 0 0 0 3px rgba(29, 107, 130, 0.18)",
+          "glow-gold": "0 2px 14px -4px rgba(138, 111, 37, 0.45)",
+          "glow-soft": "0 8px 30px -12px rgba(16, 22, 31, 0.28)",
+          "shadow-plate": "0 1px 2px rgba(16, 22, 31, 0.06), 0 6px 20px -10px rgba(16, 22, 31, 0.18)",
+          "shadow-pop": "0 12px 44px -12px rgba(16, 22, 31, 0.30)",
+          "scrim-bottom": "linear-gradient(to top, rgba(238,241,245,0.96) 0%, rgba(238,241,245,0.6) 40%, transparent 100%)",
+          "scrim-full": "linear-gradient(to top, rgba(238,241,245,0.9) 0%, rgba(238,241,245,0.4) 60%, rgba(238,241,245,0.15) 100%)",
+          "wash-panel": "linear-gradient(135deg, rgba(16,22,31,0.035) 0%, rgba(16,22,31,0) 60%)"
+        },
+        "dark": {
+          "background": "#0a0e15",
+          "foreground": "#c2c9d2",
+          "card": "#11161f",
+          "card-foreground": "#c2c9d2",
+          "popover": "#11161f",
+          "popover-foreground": "#c2c9d2",
+          "primary": "#c9a23a",
+          "primary-foreground": "#05070b",
+          "secondary": "#1a212d",
+          "secondary-foreground": "#e8ecf1",
+          "muted": "#1a212d",
+          "muted-foreground": "#8b95a3",
+          "accent": "#1e2836",
+          "accent-foreground": "#e8ecf1",
+          "destructive": "#c1352b",
+          "destructive-foreground": "#ffffff",
+          "border": "#3b4654",
+          "input": "#3b4654",
+          "ring": "#5fd0e6",
+          "chart-1": "#4fb6d8",
+          "chart-2": "#e8743b",
+          "chart-3": "#8b5ba6",
+          "chart-4": "#4d77c4",
+          "chart-5": "#4fa86b",
+          "radius": "0rem",
+          "sidebar": "#05070b",
+          "sidebar-foreground": "#c2c9d2",
+          "sidebar-primary": "#c9a23a",
+          "sidebar-primary-foreground": "#05070b",
+          "sidebar-accent": "#11161f",
+          "sidebar-accent-foreground": "#e8ecf1",
+          "sidebar-border": "#28313f",
+          "sidebar-ring": "#5fd0e6",
+
+          "accent-text": "#f0c850",
+          "text-on-accent": "#05070b",
+          "border-hairline": "#3b4654",
+          "border-strong": "#5b6675",
+          "surface-input": "color-mix(in srgb, #05070b 55%, transparent)",
+          "overlay-scrim": "rgba(5, 7, 11, 0.72)",
+          "glow-focus": "0 0 0 1px #5fd0e6, 0 0 16px -2px rgba(95, 208, 230, 0.65)",
+          "glow-gold": "0 0 18px -3px rgba(240, 200, 80, 0.7)",
+          "glow-soft": "0 0 24px -6px rgba(0, 0, 0, 0.8)",
+          "shadow-plate": "0 2px 18px -6px rgba(0, 0, 0, 0.7)",
+          "shadow-pop": "0 8px 40px -10px rgba(0, 0, 0, 0.85)",
+          "scrim-bottom": "linear-gradient(to top, rgba(5,7,11,0.92) 0%, rgba(5,7,11,0.55) 40%, transparent 100%)",
+          "scrim-full": "linear-gradient(to top, rgba(5,7,11,0.85) 0%, rgba(5,7,11,0.35) 60%, rgba(5,7,11,0.15) 100%)",
+          "wash-panel": "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 60%)"
+        }
+      },
+      "css": {
+        "@layer base": {
+          "body": {
+            "font-family": "var(--font-text)",
+            "letter-spacing": "var(--track-tight)"
+          }
+        },
+        "@layer components": {
+          ".scifi-label": {
+            "font-family": "var(--font-display)",
+            "font-size": "12px",
+            "font-weight": "600",
+            "letter-spacing": "var(--track-label)",
+            "text-transform": "uppercase"
+          },
+          ".scifi-eyebrow": {
+            "font-family": "var(--font-display)",
+            "font-size": "10px",
+            "font-weight": "600",
+            "letter-spacing": "var(--track-wide)",
+            "text-transform": "uppercase",
+            "color": "var(--accent-text)"
+          },
+          ".scifi-title": {
+            "font-family": "var(--font-display)",
+            "font-weight": "600",
+            "letter-spacing": "var(--track-label)",
+            "text-transform": "uppercase",
+            "line-height": "1.05"
+          },
+          ".scifi-numeral": {
+            "font-family": "var(--font-display)",
+            "font-weight": "300",
+            "font-variant-numeric": "tabular-nums",
+            "letter-spacing": "var(--track-tight)"
+          },
+          ".scifi-flavor": {
+            "font-family": "var(--font-text)",
+            "font-style": "italic",
+            "color": "var(--muted-foreground)"
+          }
+        }
+      }
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Drop-in replacement for the shadcn Button — angular, uppercase, tracked, with gold primary fill, hairline secondary, cyan focus glow, and a mechanical press. Keeps the stock shadcn API (variant/size/asChild).",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "files": [
+        { "path": "registry/ui/button.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Drop-in replacement for the shadcn Input — angular, hairline border over a translucent well, cyan focus rim + glow.",
+      "files": [
+        { "path": "registry/ui/input.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Drop-in replacement for the shadcn Dialog — blurred scrim, angular surface with a gold top-edge accent bar and cyan corner brackets, uppercase tracked title. Keeps the stock shadcn API.",
+      "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+      "files": [
+        { "path": "registry/ui/dialog.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Uppercase status / element / rarity tag. Stock shadcn variants plus themed tones: gold, cyan, crimson, categorical colors (arc, solar, void, stasis, strand) and rarity levels (common → exotic).",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "files": [
+        { "path": "registry/ui/badge.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "corner-frame",
+      "type": "registry:ui",
+      "title": "CornerFrame",
+      "description": "Decorative HUD frame and the visual-density knob: L-shaped corner brackets, optional scan-line top tick and ambient glow (density=\"full\"), or a calm hairline panel (density=\"minimal\").",
+      "files": [
+        { "path": "registry/ui/corner-frame.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "plate",
+      "type": "registry:ui",
+      "title": "Plate",
+      "description": "Tooltip/info plate with category-colored top edge and header band, eyebrow + uppercase title, translucent blurred body.",
+      "files": [
+        { "path": "registry/ui/plate.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "diamond",
+      "type": "registry:ui",
+      "title": "Diamond",
+      "description": "Diamond / rhombus emblem container (clip-path). Filled or outlined, with an optional thin outer frame.",
+      "files": [
+        { "path": "registry/ui/diamond.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "rank-chevron",
+      "type": "registry:ui",
+      "title": "RankChevron",
+      "description": "Stacked chevron rank insignia (clip-path) — `count` chevrons, `filled` of them colored, the rest dim outlines.",
+      "files": [
+        { "path": "registry/ui/rank-chevron.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "stat-bar",
+      "type": "registry:ui",
+      "title": "StatBar",
+      "description": "Thin labeled stat readout (Impact / Range / Stability…) — label left, thin track right, optional numeric value.",
+      "files": [
+        { "path": "registry/ui/stat-bar.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "progress-capsule",
+      "type": "registry:ui",
+      "title": "ProgressCapsule",
+      "description": "Pill-shaped reputation/objective bar — continuous fill or discrete glowing segments.",
+      "files": [
+        { "path": "registry/ui/progress-capsule.tsx", "type": "registry:ui" }
+      ]
+    }
+  ]
+}

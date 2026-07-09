@@ -1,0 +1,52 @@
+/* ============================================================
+   SPACING, RADII, BORDERS, SHADOWS — Sci-Fi UI Design System
+   This system uses ANGULAR: hard 0px corners on
+   plates and cards, full pills only for segmented progress
+   capsules. Borders are thin hairlines, often drawn as L-shaped
+   corner brackets. Elevation is conveyed by darkening +
+   protection gradients, not by big blurred shadows.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ---- Radii — sharp by default ---- */
+  --radius-0:    0px;     /* default: plates, cards, buttons */
+  --radius-sm:   2px;     /* the only "softening" used in-game */
+  --radius-pill: 999px;   /* segmented capsules, round HUD glyphs */
+
+  /* ---- Border widths ---- */
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-accent: 3px;   /* the colored top-edge on tooltip plates */
+
+  /* ---- Shadows / gradients ---- */
+  --shadow-plate: 0 2px 18px -6px rgba(0,0,0,0.7);
+  --shadow-pop:   0 8px 40px -10px rgba(0,0,0,0.85);
+
+  /* "Protection gradient": dark scrim under text on imagery */
+  --scrim-bottom: linear-gradient(to top, rgba(5,7,11,0.92) 0%, rgba(5,7,11,0.55) 40%, transparent 100%); /* @kind other */
+  --scrim-full:   linear-gradient(to top, rgba(5,7,11,0.85) 0%, rgba(5,7,11,0.35) 60%, rgba(5,7,11,0.15) 100%); /* @kind other */
+
+  /* Subtle sacred-geometry tint wash for panels */
+  --wash-panel: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 60%); /* @kind other */
+
+  /* ---- Motion ---- */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-sharp: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --dur-fast:   120ms; /* @kind other */
+  --dur-base:   200ms; /* @kind other */
+  --dur-slow:   360ms; /* @kind other */
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "description": "Uppercase status / element / rarity tag. Stock shadcn variants plus themed tones: gold, cyan, crimson, categorical colors (arc, solar, void, stasis, strand) and rarity levels (common → exotic).",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/badge.tsx",
+      "content": "import * as React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst badgeVariants = cva(\n  \"inline-flex w-fit shrink-0 items-center justify-center gap-1.5 rounded-none border px-2.5 py-1 text-[11px] leading-none font-semibold uppercase whitespace-nowrap [font-family:var(--font-display,inherit)] [letter-spacing:var(--track-label,0.08em)] [&>svg]:pointer-events-none [&>svg]:size-3\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"border-primary bg-primary/15 text-[var(--accent-text,var(--primary))]\",\n        secondary:\n          \"bg-secondary/60 text-foreground [border-color:var(--border-strong,var(--border))]\",\n        destructive:\n          \"border-destructive bg-destructive/15 text-[var(--crimson-bright,var(--destructive))]\",\n        outline: \"border-border bg-transparent text-muted-foreground\",\n        cyan: \"border-[var(--cyan)] bg-[var(--cyan)]/15 text-[var(--ring)]\",\n        arc: \"border-[var(--arc)] bg-[var(--arc)]/15 text-[var(--arc)]\",\n        solar:\n          \"border-[var(--solar)] bg-[var(--solar)]/15 text-[var(--solar)]\",\n        void: \"border-[var(--void)] bg-[var(--void)]/18 text-[var(--void)]\",\n        stasis:\n          \"border-[var(--stasis)] bg-[var(--stasis)]/18 text-[var(--stasis)]\",\n        strand:\n          \"border-[var(--strand)] bg-[var(--strand)]/15 text-[var(--strand)]\",\n        common:\n          \"border-[var(--rarity-common)] bg-[var(--rarity-common)]/12 text-[var(--rarity-common)]\",\n        uncommon:\n          \"border-[var(--rarity-uncommon)] bg-[var(--rarity-uncommon)]/18 text-[var(--rarity-uncommon)]\",\n        rare: \"border-[var(--rarity-rare)] bg-[var(--rarity-rare)]/20 text-[var(--rarity-rare)]\",\n        legendary:\n          \"border-[var(--rarity-legendary)] bg-[var(--rarity-legendary)]/28 text-[color-mix(in_srgb,var(--rarity-legendary)_60%,white)]\",\n        exotic:\n          \"border-[var(--rarity-exotic)] bg-[var(--rarity-exotic)]/16 text-[var(--rarity-exotic)]\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n)\n\nfunction Badge({\n  className,\n  variant,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"span\"> &\n  VariantProps<typeof badgeVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot : \"span\"\n\n  return (\n    <Comp\n      data-slot=\"badge\"\n      className={cn(badgeVariants({ variant }), className)}\n      {...props}\n    />\n  )\n}\n\nexport { Badge, badgeVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

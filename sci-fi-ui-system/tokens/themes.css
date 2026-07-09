@@ -1,0 +1,74 @@
+/* ============================================================
+   THEMES — Sci-Fi UI Design System
+   ------------------------------------------------------------
+   The system is dark-first (the HUD lives on near-black
+   slate). This file adds a real LIGHT theme — the in-game
+   "blueprint" wash used on class-select / tutorial screens:
+   a cool pale-slate paper, dark slate ink, the gold accent
+   deepened so it stays legible, and cyan deepened for focus.
+
+   USAGE
+   -----
+   Set the attribute on <html> (or any subtree):
+       <html data-theme="light">          → light everywhere
+       <section data-theme="light"> … </section>  → scoped island
+
+   Components reference semantic aliases (--bg-base, --surface-card,
+   --text-body, --accent-text, --border-hairline, …), so flipping
+   this attribute re-themes them automatically. The raw scale
+   (--slate-700, --gold, …) and the game-flavor hues do NOT change.
+   ============================================================ */
+
+[data-theme="light"] {
+  /* Surfaces — cool pale paper, faint blue cast */
+  --bg-base:         #eef1f5;
+  --bg-deep:         #e2e7ee;
+  --surface-raised:  #f6f8fb;
+  --surface-card:    #ffffff;
+  --surface-panel:   #e7ecf2;
+  --surface-input:   #ffffff;
+  --surface-overlay: #ffffff;
+  --overlay-scrim:   rgba(16, 22, 31, 0.45);
+
+  /* Ink — dark slate, sentence-case body stays comfortable */
+  --text-primary:     #0a0e15;
+  --text-body:        #1c2430;
+  --text-muted:       #4b566580;  /* falls back below */
+  --text-muted:       #515c6b;
+  --text-faint:       #7c8696;
+  --text-invert:      #f6f8fb;
+  --text-placeholder: #9aa3b0;
+  --text-link:        #1d6b82;
+  --text-on-accent:   #05070b;
+
+  /* Accent — gold reads poorly as text on white, so accent-as-text
+     deepens; fills keep the brighter gold. */
+  --accent:        var(--gold);
+  --accent-bright: var(--gold-bright);
+  --accent-press:  var(--gold-deep);
+  --accent-text:   var(--gold-deep);
+
+  /* Borders — dark hairlines on light */
+  --border-hairline: #d3d9e1;
+  --border-strong:   #aab3bf;
+  --border-input:    #c4ccd6;
+  --border-focus:    var(--cyan-deep);
+
+  /* Glows soften to grounded shadows on light */
+  --glow-focus: 0 0 0 1px var(--cyan-deep), 0 0 0 3px rgba(29,107,130,0.18);
+  --glow-gold:  0 2px 14px -4px rgba(138,111,37,0.45);
+  --glow-soft:  0 8px 30px -12px rgba(16,22,31,0.28);
+
+  /* Plate shadows become visible (no dark scrim to lean on) */
+  --shadow-plate: 0 1px 2px rgba(16,22,31,0.06), 0 6px 20px -10px rgba(16,22,31,0.18);
+  --shadow-pop:   0 12px 44px -12px rgba(16,22,31,0.30);
+
+  /* Protection scrims re-tuned for light imagery */
+  --scrim-bottom: linear-gradient(to top, rgba(238,241,245,0.96) 0%, rgba(238,241,245,0.6) 40%, transparent 100%); /* @kind other */
+  --scrim-full:   linear-gradient(to top, rgba(238,241,245,0.9) 0%, rgba(238,241,245,0.4) 60%, rgba(238,241,245,0.15) 100%); /* @kind other */
+  --wash-panel:   linear-gradient(135deg, rgba(16,22,31,0.035) 0%, rgba(16,22,31,0) 60%); /* @kind other */
+
+  color-scheme: light;
+}
+
+:root { color-scheme: dark; }

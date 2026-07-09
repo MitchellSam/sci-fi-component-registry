@@ -1,0 +1,12 @@
+{
+  "name": "sci-fi-registry",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Dark, angular sci-fi shadcn/ui registry — theme + components, installed via `npx shadcn add`.",
+  "scripts": {
+    "registry:build": "shadcn build --output ./r"
+  },
+  "devDependencies": {
+    "shadcn": "^2.10.0"
+  }
+}

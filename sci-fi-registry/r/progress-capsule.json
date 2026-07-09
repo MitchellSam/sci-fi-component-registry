@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-capsule",
+  "title": "ProgressCapsule",
+  "description": "Pill-shaped reputation/objective bar — continuous fill or discrete glowing segments.",
+  "files": [
+    {
+      "path": "registry/ui/progress-capsule.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst TONES: Record<string, string> = {\n  cyan: \"var(--cyan, var(--ring))\",\n  gold: \"var(--primary)\",\n  crimson: \"var(--destructive)\",\n  arc: \"var(--arc, #4fb6d8)\",\n  solar: \"var(--solar, #e8743b)\",\n  void: \"var(--void, #8b5ba6)\",\n  strand: \"var(--strand, #4fa86b)\",\n}\n\n/**\n * Segmented progress capsule — pill-shaped progress /\n * objective bar split into discrete segments. If `segments` is 0 it\n * renders a continuous fill at `value`%. `tone` is a named tone or\n * any CSS color.\n */\nfunction ProgressCapsule({\n  value = 50,\n  segments = 0,\n  filledSegments = 0,\n  tone = \"cyan\",\n  height = 12,\n  className,\n  style,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  value?: number\n  segments?: number\n  filledSegments?: number\n  tone?: string\n  height?: number\n}) {\n  const color = TONES[tone] ?? tone\n\n  return (\n    <div\n      data-slot=\"progress-capsule\"\n      role=\"progressbar\"\n      aria-valuemin={0}\n      aria-valuemax={segments > 0 ? segments : 100}\n      aria-valuenow={segments > 0 ? filledSegments : value}\n      className={cn(\n        \"box-border flex w-full overflow-hidden rounded-full border [background:color-mix(in_srgb,var(--background)_70%,transparent)] [border-color:var(--border-hairline,var(--border))]\",\n        segments > 0 && \"gap-[3px] p-[2px]\",\n        className\n      )}\n      style={{ height, ...style }}\n      {...props}\n    >\n      {segments > 0 ? (\n        Array.from({ length: segments }).map((_, i) => (\n          <div\n            key={i}\n            className=\"flex-1 rounded-[1px]\"\n            style={{\n              background: i < filledSegments ? color : \"transparent\",\n              boxShadow:\n                i < filledSegments ? `0 0 8px -2px ${color}` : undefined,\n            }}\n          />\n        ))\n      ) : (\n        <div\n          className=\"rounded-full transition-[width] [transition-duration:var(--dur-base,200ms)] [transition-timing-function:var(--ease-out-d2,ease-out)]\"\n          style={{\n            width: `${Math.max(0, Math.min(100, value))}%`,\n            background: color,\n            boxShadow: `0 0 10px -2px ${color}`,\n          }}\n        />\n      )}\n    </div>\n  )\n}\n\nexport { ProgressCapsule }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

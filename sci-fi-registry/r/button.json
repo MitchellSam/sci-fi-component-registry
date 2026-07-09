@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Button",
+  "description": "Drop-in replacement for the shadcn Button — angular, uppercase, tracked, with gold primary fill, hairline secondary, cyan focus glow, and a mechanical press. Keeps the stock shadcn API (variant/size/asChild).",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/button.tsx",
+      "content": "import * as React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst buttonVariants = cva(\n  \"inline-flex shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-none uppercase [font-family:var(--font-display,inherit)] [letter-spacing:var(--track-label,0.08em)] transition-[background-color,border-color,box-shadow,transform] [transition-duration:var(--dur-fast,120ms)] [transition-timing-function:var(--ease-sharp,ease-out)] outline-none focus-visible:[box-shadow:var(--glow-focus,0_0_0_2px_var(--ring))] active:scale-[0.98] disabled:pointer-events-none disabled:opacity-40 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"border border-primary bg-primary font-semibold text-primary-foreground hover:border-[var(--gold-bright,var(--primary))] hover:bg-[var(--gold-bright,var(--primary))]\",\n        destructive:\n          \"border border-destructive bg-destructive font-semibold text-white hover:border-[var(--crimson-bright,var(--destructive))] hover:bg-[var(--crimson-bright,var(--destructive))]\",\n        outline:\n          \"border bg-card/70 font-medium text-foreground [border-color:var(--border-strong,var(--border))] hover:bg-accent hover:text-accent-foreground\",\n        secondary:\n          \"border border-transparent bg-secondary font-medium text-secondary-foreground hover:bg-accent\",\n        ghost:\n          \"border border-transparent font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground\",\n        link: \"font-medium text-[var(--ring)] underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"px-6 py-[11px] text-[13px]\",\n        sm: \"px-4 py-[7px] text-xs\",\n        lg: \"px-8 py-[15px] text-[15px]\",\n        icon: \"size-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { Button, buttonVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

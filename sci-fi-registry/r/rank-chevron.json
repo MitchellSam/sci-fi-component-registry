@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rank-chevron",
+  "title": "RankChevron",
+  "description": "Stacked chevron rank insignia (clip-path) — `count` chevrons, `filled` of them colored, the rest dim outlines.",
+  "files": [
+    {
+      "path": "registry/ui/rank-chevron.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst TONES: Record<string, string> = {\n  gold: \"var(--primary)\",\n  cyan: \"var(--cyan, var(--ring))\",\n  crimson: \"var(--destructive)\",\n  arc: \"var(--arc, #4fb6d8)\",\n  solar: \"var(--solar, #e8743b)\",\n  void: \"var(--void, #8b5ba6)\",\n}\n\nconst CHEVRON_CLIP =\n  \"polygon(0 0, 50% 60%, 100% 0, 100% 38%, 50% 100%, 0 38%)\"\n\n/**\n * Rank chevron stack — progression insignia.\n * Renders `count` nested chevrons; `filled` of them are colored,\n * the rest are dim outlines. `tone` is a named tone or any CSS color.\n */\nfunction RankChevron({\n  count = 3,\n  filled = 3,\n  tone = \"gold\",\n  size = 40,\n  className,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  count?: number\n  filled?: number\n  tone?: string\n  size?: number\n}) {\n  const color = TONES[tone] ?? tone\n\n  return (\n    <div\n      data-slot=\"rank-chevron\"\n      className={cn(\"inline-flex flex-col items-center\", className)}\n      {...props}\n    >\n      {Array.from({ length: count }).map((_, i) => (\n        <div\n          key={i}\n          style={{\n            width: size,\n            height: size * 0.34,\n            clipPath: CHEVRON_CLIP,\n            background:\n              i < filled\n                ? color\n                : \"color-mix(in srgb, var(--muted-foreground) 40%, transparent)\",\n            marginTop: i === 0 ? 0 : -size * 0.12,\n          }}\n        />\n      ))}\n    </div>\n  )\n}\n\nexport { RankChevron }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "diamond",
+  "title": "Diamond",
+  "description": "Diamond / rhombus emblem container (clip-path). Filled or outlined, with an optional thin outer frame.",
+  "files": [
+    {
+      "path": "registry/ui/diamond.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst TONES: Record<string, string> = {\n  crimson: \"var(--destructive)\",\n  cyan: \"var(--cyan, var(--ring))\",\n  gold: \"var(--primary)\",\n  void: \"var(--void, #8b5ba6)\",\n  solar: \"var(--solar, #e8743b)\",\n  arc: \"var(--arc, #4fb6d8)\",\n  neutral: \"var(--border-strong, var(--border))\",\n}\n\nconst DIAMOND_CLIP = \"polygon(50% 0, 100% 50%, 50% 100%, 0 50%)\"\n\n/**\n * Diamond / rhombus emblem container — the emblem &\n * faction marker. Renders children (an icon, number, or glyph) centered.\n * `framed` adds the thin outer bracket frame seen behind HUD markers.\n * `tone` is a named tone or any CSS color.\n */\nfunction Diamond({\n  size = 72,\n  tone = \"crimson\",\n  filled = true,\n  framed = false,\n  className,\n  style,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  size?: number\n  tone?: string\n  filled?: boolean\n  framed?: boolean\n}) {\n  const color = TONES[tone] ?? tone\n\n  const inner = (\n    <div\n      data-slot=\"diamond\"\n      className={cn(\n        \"flex items-center justify-center font-light [font-family:var(--font-display,inherit)]\",\n        !framed && className\n      )}\n      style={{\n        width: size,\n        height: size,\n        clipPath: DIAMOND_CLIP,\n        background: filled ? color : \"transparent\",\n        border: filled ? \"none\" : `2px solid ${color}`,\n        color: filled ? \"var(--slate-100, #e8ecf1)\" : color,\n        fontSize: size * 0.3,\n        ...(!framed && style),\n      }}\n      {...(!framed && props)}\n    >\n      {children}\n    </div>\n  )\n\n  if (!framed) return inner\n\n  return (\n    <div\n      data-slot=\"diamond-frame\"\n      className={cn(\"relative flex items-center justify-center\", className)}\n      style={{ width: size * 1.5, height: size * 1.5, ...style }}\n      {...props}\n    >\n      <div\n        aria-hidden\n        className=\"absolute\"\n        style={{\n          width: size * 1.25,\n          height: size * 1.25,\n          clipPath: DIAMOND_CLIP,\n          border: `1px solid color-mix(in srgb, ${color} 55%, transparent)`,\n        }}\n      />\n      {inner}\n    </div>\n  )\n}\n\nexport { Diamond }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

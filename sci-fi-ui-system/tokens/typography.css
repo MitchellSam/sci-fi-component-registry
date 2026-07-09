@@ -1,0 +1,51 @@
+/* ============================================================
+   TYPOGRAPHY — Sci-Fi UI Design System
+   The UI voice uses a clean grotesque with WIDE uppercase
+   tracking on titles, thin numerals for stats, and italic
+   body copy for flavor. Substitutes: Archivo (display) +
+   Hanken Grotesk (text).
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Archivo', 'Neue Haas Grotesk Display', system-ui, sans-serif;
+  --font-text:    'Hanken Grotesk', system-ui, sans-serif;
+  --font-numeric: 'Archivo', system-ui, sans-serif;   /* used at light weight */
+
+  /* ---- Weights ---- */
+  --w-thin:    200; /* @kind font */
+  --w-light:   300; /* @kind font */
+  --w-regular: 400; /* @kind font */
+  --w-medium:  500; /* @kind font */
+  --w-semibold:600; /* @kind font */
+  --w-bold:    700; /* @kind font */
+
+  /* ---- Tracking (the tracking signature) ---- */
+  --track-mega:  0.22em;   /* @kind font */
+  --track-wide:  0.14em;   /* @kind font */
+  --track-label: 0.08em;   /* @kind font */
+  --track-tight: 0.01em;   /* @kind font */
+
+  /* ---- Type scale (px) ---- */
+  --fs-display: 72px;
+  --fs-h1:      44px;
+  --fs-h2:      32px;
+  --fs-h3:      24px;
+  --fs-title:   19px;
+  --fs-body:    16px;
+  --fs-sm:      14px;
+  --fs-label:   12px;
+  --fs-micro:   10px;
+  --fs-numeral: 56px;   /* the "000" stat readouts */
+
+  /* ---- Line heights ---- */
+  --lh-tight:  1.05; /* @kind font */
+  --lh-snug:   1.2; /* @kind font */
+  --lh-body:   1.55; /* @kind font */
+  --lh-prose:  1.7; /* @kind font */
+
+  /* ---- Long-form / prose measure ---- */
+  --measure:        68ch;   /* ideal reading column width */
+  --measure-narrow: 54ch;
+  --prose-gap:      var(--space-5);  /* vertical rhythm between blocks */
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "title": "Input",
+  "description": "Drop-in replacement for the shadcn Input — angular, hairline border over a translucent well, cyan focus rim + glow.",
+  "files": [
+    {
+      "path": "registry/ui/input.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Input({ className, type, ...props }: React.ComponentProps<\"input\">) {\n  return (\n    <input\n      type={type}\n      data-slot=\"input\"\n      className={cn(\n        \"flex h-10 w-full min-w-0 rounded-none border border-input px-3.5 py-2 text-sm text-foreground [background:var(--surface-input,transparent)] transition-[border-color,box-shadow] [transition-duration:var(--dur-fast,120ms)] [transition-timing-function:var(--ease-sharp,ease-out)] outline-none selection:bg-primary selection:text-primary-foreground placeholder:text-muted-foreground\",\n        \"file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground\",\n        \"focus-visible:border-[var(--ring)] focus-visible:[box-shadow:var(--glow-focus,0_0_0_1px_var(--ring))]\",\n        \"aria-invalid:border-destructive aria-invalid:focus-visible:[box-shadow:0_0_0_1px_var(--destructive)]\",\n        \"disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Input }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

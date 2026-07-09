@@ -1,0 +1,84 @@
+/* ============================================================
+   COLORS (CORE) — Sci-Fi UI Design System
+   The general-purpose palette: a cool blue-black slate
+   substrate, warm gold/amber primary accent, engram cyan for
+   selection/info, crimson for danger, plus status semantics.
+   These are the tokens to reach for in ANY product.
+
+   Game-specific hues (elemental subclasses, item rarity, PvP
+   teams) live in tokens/flavor.css — opt-in, not used here.
+   Light-theme overrides live in tokens/themes.css.
+   ============================================================ */
+
+:root {
+  /* ---- Substrate / neutrals (cool blue-black slate) ---- */
+  --slate-1000: #05070b;   /* deepest void, behind everything */
+  --slate-900:  #0a0e15;   /* page background */
+  --slate-800:  #11161f;   /* raised surface */
+  --slate-700:  #1a212d;   /* card / panel fill */
+  --slate-600:  #28313f;   /* elevated panel, table header */
+  --slate-500:  #3b4654;   /* hairline borders, dividers */
+  --slate-400:  #5b6675;   /* disabled text, faint icon */
+  --slate-300:  #8b95a3;   /* secondary / muted text */
+  --slate-200:  #c2c9d2;   /* primary body text on dark */
+  --slate-100:  #e8ecf1;   /* near-white headings */
+  --white:      #ffffff;   /* pure white — numerals, key labels */
+
+  /* ---- Primary accent: Tower gold / amber ---- */
+  --gold-bright: #f0c850;  /* exotic / level-up highlight */
+  --gold:        #c9a23a;  /* primary accent, focus glow */
+  --gold-deep:   #8a6f25;  /* pressed / shadowed gold, accent-on-light */
+
+  /* ---- Engram cyan (selection, currency, info) ---- */
+  --cyan-bright: #5fd0e6;
+  --cyan:        #38a9c4;
+  --cyan-deep:   #1d6b82;
+
+  /* ---- Faction crimson (danger / destructive) ---- */
+  --crimson-bright: #e2483b;
+  --crimson:        #c1352b;
+  --crimson-deep:   #7d1f19;
+
+  /* ---- Status / semantic ---- */
+  --success: #4f8a3d;
+  --warning: #e8a13b;
+  --danger:  #c1352b;
+  --info:    #38a9c4;
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference THESE in components, not the
+     raw scale. They re-point under [data-theme="light"].
+     ============================================================ */
+  --bg-base:        var(--slate-900);
+  --bg-deep:        var(--slate-1000);
+  --surface-raised: var(--slate-800);
+  --surface-card:   var(--slate-700);
+  --surface-panel:  var(--slate-600);
+  --surface-input:  color-mix(in srgb, var(--slate-1000) 55%, transparent);
+  --surface-overlay:var(--slate-800);   /* modal / popover fill */
+  --overlay-scrim:  rgba(5, 7, 11, 0.72); /* dim behind modals */
+
+  --text-primary:    var(--slate-100);
+  --text-body:       var(--slate-200);
+  --text-muted:      var(--slate-300);
+  --text-faint:      var(--slate-400);
+  --text-invert:     var(--slate-1000);
+  --text-placeholder:var(--slate-400);
+  --text-link:       var(--cyan-bright);
+  --text-on-accent:  var(--slate-1000);  /* text atop a gold fill */
+
+  --accent:         var(--gold);
+  --accent-bright:  var(--gold-bright);
+  --accent-press:   var(--gold-deep);
+  --accent-text:    var(--gold-bright);  /* accent used as TEXT (legible) */
+
+  --border-hairline: var(--slate-500);
+  --border-strong:   var(--slate-400);
+  --border-input:    var(--slate-500);
+  --border-focus:    var(--cyan-bright);
+
+  /* Glows — cyan focus glow */
+  --glow-focus:  0 0 0 1px var(--cyan-bright), 0 0 16px -2px rgba(95,208,230,0.65);
+  --glow-gold:   0 0 18px -3px rgba(240,200,80,0.7);
+  --glow-soft:   0 0 24px -6px rgba(0,0,0,0.8);
+}
